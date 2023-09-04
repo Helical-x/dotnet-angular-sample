@@ -1,0 +1,21 @@
+﻿version: '3'
+services:
+#  app:
+#    build: ./NoteSolution
+#    mem_limit: 512m
+#    ports:
+#      - "4000:80"
+#    environment:
+#      ASPNETCORE_ENVIRONMENT: Development
+#    depends_on:
+#      - db
+#  
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    mem_limit: 2048m
+    environment:
+      - MSSQL_SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+

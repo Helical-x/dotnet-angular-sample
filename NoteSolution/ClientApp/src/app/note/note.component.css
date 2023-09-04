@@ -1,0 +1,12 @@
+mat-grid-tile {
+  background-color: #fff; /* Set the background color for the note */
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.1) 10px, rgba(0, 0, 0, 0.1) 20px); /* Create a diagonal striped pattern */
+  padding: 20px; /* Add padding to the note */
+  border: 1px solid #ddd; /* Add a border to the note */
+  border-radius: 5px; /* Add rounded corners to the note */
+}
+
+section {
+  display: table;
+}
+

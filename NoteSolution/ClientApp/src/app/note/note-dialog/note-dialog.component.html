@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Create/Edit Note</h1>
+<div mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="data.title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Content</mat-label>
+      <textarea matInput [(ngModel)]="data.content"></textarea>
+    </mat-form-field>
+
+  <mat-form-field class="example-chip-list example-full-width">
+    <mat-label>Tags</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Fruit selection">
+      <mat-chip-row *ngFor="let tag of tags" (removed)="remove(tag)">
+        {{tag}}
+        <button matChipRemove [attr.aria-label]="'remove ' + tag">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input placeholder="Add new tag..." #tagInput [formControl]="tagCtrl"
+           [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           (matChipInputTokenEnd)="add($event)"/>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+        {{tag}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions class="example-full-width">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="save()" cdkFocusInitial>Save</button>
+</div>
