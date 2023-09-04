@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
 import {Note} from "../entity/note";
 import {MatDialog} from "@angular/material/dialog";
 
@@ -12,7 +12,7 @@ import {FormBuilder} from "@angular/forms";
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.css']
 })
-export class NoteComponent implements OnInit{
+export class NoteComponent implements OnInit, AfterViewInit{
 
   notes: Note[] = [];
   filteredNotes: Note[] = this.notes;
@@ -22,6 +22,7 @@ export class NoteComponent implements OnInit{
   allTags: string[] = [];
   selectedTags: any;
   toppings: any = null;
+  spinner: boolean = true;
 
   constructor(
     private noteService: NoteService,
@@ -29,7 +30,9 @@ export class NoteComponent implements OnInit{
     private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+  }
 
+  ngAfterViewInit() {
     this.getNotes();
     this.noteService.getAllTags().subscribe(data => {
       let jsonObject: any = {};
@@ -37,7 +40,8 @@ export class NoteComponent implements OnInit{
       this.allTags.forEach(t =>
         jsonObject[t] = false
       );
-      this.toppings = this._formBuilder.group(jsonObject)
+      this.toppings = this._formBuilder.group(jsonObject);
+      this.spinner = false;
     });
   }
 
