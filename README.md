@@ -24,7 +24,7 @@ Follow these steps to get NoteSolution up and running on your local machine:
 
 2. Run the application.
    ```shell
-    ./run-init
+    bash run-init.sh
       ```
 
 3. Go to https://localhost:7252.
