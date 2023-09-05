@@ -28,6 +28,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -39,31 +40,32 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     NoteDialogComponent,
     DeleteDialogComponent
   ],
-    imports: [
-        BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
-        HttpClientModule,
-        FormsModule,
-        ApiAuthorizationModule,
-        MatGridListModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        RouterModule.forRoot([
-            {path: '', component: HomeComponent, pathMatch: 'full'},
-            {path: 'counter', component: CounterComponent},
-            {path: 'note', component: NoteComponent, canActivate: [AuthorizeGuard]}
-        ]),
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        MatButtonToggleModule,
-        MatIconModule,
-        MatTooltipModule,
-        MatChipsModule,
-        MatAutocompleteModule,
-        MatDividerModule,
-        MatCheckboxModule
-    ],
+  imports: [
+    BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
+    HttpClientModule,
+    FormsModule,
+    ApiAuthorizationModule,
+    MatGridListModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent, pathMatch: 'full'},
+      {path: 'counter', component: CounterComponent},
+      {path: 'note', component: NoteComponent, canActivate: [AuthorizeGuard]}
+    ]),
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatDividerModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
     // {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}/

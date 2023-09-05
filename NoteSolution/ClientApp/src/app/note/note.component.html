@@ -29,6 +29,9 @@
 <!--  {{toppings.value | json}}-->
 <!--</section>-->
 
+<mat-spinner diameter="200" class="my-2" style="margin: 0 auto" *ngIf="spinner"></mat-spinner>
+
+
 <mat-grid-list cols="4" gutterSize="40px">
   <mat-grid-tile *ngFor="let note of filteredNotes" [colspan]="2" [rowspan]="1">
     <div class="note-card w-100 px-2 text-center">
