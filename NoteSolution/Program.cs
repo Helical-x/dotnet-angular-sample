@@ -14,14 +14,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure SQLite for development
 if (builder.Environment.IsDevelopment())
 {
-    // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
-    //                        throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-    // builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    //     options.UseSqlite(connectionString));
-    var connectionString = builder.Configuration.GetConnectionString("SqlServerConnection") ??
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
                            throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(connectionString));
+        options.UseSqlite(connectionString));
+    // var connectionString = builder.Configuration.GetConnectionString("SqlServerConnection") ??
+    //                        throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+    // builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    //     options.UseSqlServer(connectionString));
     
 }
 // Configure SQL Server for production
