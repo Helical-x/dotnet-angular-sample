@@ -1,8 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34202.233
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteSolution", "NoteSolution\NoteSolution.csproj", "{834DBD16-885E-41FE-AD3A-7E4EA76780F8}"
 EndProject
 Global
@@ -15,11 +12,5 @@ Global
 		{834DBD16-885E-41FE-AD3A-7E4EA76780F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{834DBD16-885E-41FE-AD3A-7E4EA76780F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{834DBD16-885E-41FE-AD3A-7E4EA76780F8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E00C2F25-E409-4FF8-A12E-807D2C8243B7}
 	EndGlobalSection
 EndGlobal
